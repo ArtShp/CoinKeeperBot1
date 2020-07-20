@@ -25,7 +25,7 @@ async def start_message(message: types.Message):
     with codecs.open('templates/start.html') as file:
         template = Template(file.read())
         await message.reply(template.render(username=message.chat.username),
-                                            parse_mode='HTML', reply=False)
+                                            parse_mode='HTML')
 
 
 @dp.message_handler()
@@ -33,13 +33,13 @@ async def add_expence(message: types.Message):
     try:
         expence = expenses.add_expence(message.text)
     except exception.NotCorrectMessage as e:
-        await message.reply(str(e), reply=False)
+        await message.reply(str(e))
         return
     answer_message = (
         f'Добавлены траты {expence.amount} рублей на {expence.category_name}\n\n'
         f'Здесь выведем статистику за сегодня'
     )
-    await message.reply(answer_message, reply=False)
+    await message.reply(answer_message)
 
 @dp.message_handler(lambda message: message.text.startswith('/del'))
 async def del_expence(message: types.Message):
@@ -68,7 +68,7 @@ async def categories_list(message: types.Message):
     with codecs.open('templates/categories.html') as file:
         template = Template(file.read())
         await message.reply(template.render(categories=categories),
-                            parse_mode='HTML', reply=False)
+                            parse_mode='HTML')
 
 @dp.message_handler(commands=['expenses'])
 async def expenses_list(message: types.Message):

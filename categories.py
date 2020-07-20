@@ -8,7 +8,7 @@ class Categories:
         self._categories = self._load_categories()
 
     def _load_categories(self) -> List[Dict]:
-        categories = db.fetch_all('category', 'codename name is_base_expence aliases'.split())
+        categories = db.fetch_all('category', 'codename name is_base_expense aliases'.split())
         self._fill_aliases(categories)
         return categories
 

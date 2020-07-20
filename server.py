@@ -29,20 +29,20 @@ async def start_message(message: types.Message):
 
 
 @dp.message_handler()
-async def add_expence(message: types.Message):
+async def add_expense(message: types.Message):
     try:
-        expence = expenses.add_expence(message.text)
+        expense = expenses.add_expense(message.text)
     except exception.NotCorrectMessage as e:
         await message.reply(str(e))
         return
     answer_message = (
-        f'Добавлены траты {expence.amount} рублей на {expence.category_name}\n\n'
+        f'Добавлены траты {expense.amount} рублей на {expense.category_name}\n\n'
         f'Здесь выведем статистику за сегодня'
     )
     await message.reply(answer_message)
 
 @dp.message_handler(lambda message: message.text.startswith('/del'))
-async def del_expence(message: types.Message):
+async def del_expense(message: types.Message):
     """Удаление расхода"""
     row_id = int(message.text[4:])
     expenses.delete_expense(row_id)

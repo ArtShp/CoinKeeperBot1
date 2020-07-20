@@ -10,8 +10,8 @@ from categories import Categories
 
 logging.basicConfig(level=logging.INFO)
 
-API_TOKEN = os.getenv("TELEGRAM_API_TOKEN") or '1332389210:AAE0Lie1rnaR12W69Fzp7LoPIL08ejpz_Ac'
-PROXY_URL = os.getenv("TELEGRAM_PROXY_URL") or '115943804'
+API_TOKEN = os.getenv("TELEGRAM_API_TOKEN") or '1040628806:AAHLkb6i6BhQCVQq81bIJabXMRelXJ3vEKk'
+PROXY_URL = os.getenv("TELEGRAM_PROXY_URL") or '670616993'
 
 ACCESS_ID = os.getenv("TELEGRAM_ACCESS_ID")
 

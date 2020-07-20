@@ -21,16 +21,15 @@ create table expense(
 
 insert into category (codename, name, is_base_expense, aliases)
 values
-    ("products", "продукты", true, "еда"),
-    ("coffee", "кофе", true, ""),
-    ("dinner", "обед", true, "столовая, ланч, бизнес-ланч, бизнес ланч"),
-    ("cafe", "кафе", true, "ресторан, рест, мак, макдональдс, макдак, kfc, ilpatio, il patio"),
-    ("transport", "общ. транспорт", false, "метро, автобус, metro"),
-    ("taxi", "такси", false, "яндекс такси, yandex taxi"),
-    ("phone", "телефон", false, "теле2, связь"),
-    ("books", "книги", false, "литература, литра, лит-ра"),
-    ("internet", "интернет", false, "инет, inet"),
-    ("subscriptions", "подписки", false, "подписка"),
-    ("other", "прочее", true, "");
+    ("products", "продукты", 1, "еда"),
+("walk", "гулять", 1, "перекус", "гулять", "погулять", "пепси", "pepsi", "фастфуд",
+                         "fast food", "mcdonalds", "kfc", "burger king", "чипсы", "кино",
+                         "shawarma", "шаурма", "шавуха", "шаверма", "doner", "doner king"),
+("technics", "техника", 1, "pc", "пк", "компьютер", "монитор", "cable", "провода",
+                              "клавиатура", "keyboard", "мышь", "mouse", "headphones",
+                              "наушники", "smartphone", "телефон", "консоль"),
+("games", "игры", 1, "ps4", "ps5", "playstation", "ps game", "pc game", "new game"),
+("gift", "подарки", 1, "8 марта", "др", "нг"),
+("other", "прочее", 1, "");
 
 insert into budget(codename, daily_limit) values ('base', 50);

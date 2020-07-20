@@ -15,19 +15,21 @@ create table expense(
     amount integer,
     created datetime,
     category_codename integer,
-    text text,
+    raw_text text,
     FOREIGN KEY(category_codename) REFERENCES category(codename)
 );
 
-INSERT INTO category (codename, name, is_base_expense, aliases)
-VALUES
-    ("products", "продукты", true, "еда"),
-    ("walk", "гулять", true, "перекус", "гулять", "погулять", "пепси" "pepsi", "фастфуд",
-                             "fast food", "mcdonalds", "kfc", "burger king", "чипсы", "кино",
-                             "shawarma", "шаурма", "шавуха", "шаверма", "doner", "doner king"),
-    ("technics", "техника", true, "pc", "пк", "компьютер", "монитор", "cable", "провода",
-                                  "клавиатура", "keyboard", "мышь", "mouse", "headphones",
-                                  "наушники", "smartphone", "телефон", "консоль"),
-    ("games", "игры", true, "ps4", "ps5", "playstation", "ps game", "pc game", "new game"),
-    ("gift", "подарки", true, "8 марта", "др", "нг"),
-    ("other", "прочее", true, "");
+insert into category (codename, name, is_base_expense, aliases)
+values
+    ("products", "продукты", 1, "еда"),
+("walk", "гулять", 1, "перекус", "гулять", "погулять", "пепси", "pepsi", "фастфуд",
+                         "fast food", "mcdonalds", "kfc", "burger king", "чипсы", "кино",
+                         "shawarma", "шаурма", "шавуха", "шаверма", "doner", "doner king"),
+("technics", "техника", 1, "pc", "пк", "компьютер", "монитор", "cable", "провода",
+                              "клавиатура", "keyboard", "мышь", "mouse", "headphones",
+                              "наушники", "smartphone", "телефон", "консоль"),
+("games", "игры", 1, "ps4", "ps5", "playstation", "ps game", "pc game", "new game"),
+("gift", "подарки", 1, "8 марта", "др", "нг"),
+("other", "прочее", 1, "");
+
+insert into budget(codename, daily_limit) values ('base', 50);

@@ -6,7 +6,7 @@ from typing import List, NamedTuple, Optional
 import pytz
 
 import db
-import exception
+import exceptions
 from categories import Categories
 
 
@@ -107,7 +107,7 @@ def _parse_message(raw_message: str) -> Message:
     regexp_result = re.match(r"([\d ]+) (.*)", raw_message)
     if not regexp_result or not regexp_result.group(0) \
             or not regexp_result.group(1) or not regexp_result.group(2):
-        raise exception.NotCorrectMessage(
+        raise exceptions.NotCorrectMessage(
             "Не могу понять сообщение. Напишите сообщение в формате, "
             "например:\n1500 метро")
 

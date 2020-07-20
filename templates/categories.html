@@ -1,0 +1,7 @@
+<p>Категории трат:</p>
+
+<ul>
+    {% for c in categories %}
+    <li>{{ c.name }} ({{ c.aliases }})</li>
+    {% endfor %}
+</ul>

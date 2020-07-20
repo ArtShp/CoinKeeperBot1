@@ -13,7 +13,7 @@ create table category(
 create table expense(
     id integer primary key,
     amount integer,
-    created date,
+    created datetime,
     category_codename integer,
     text text,
     FOREIGN KEY(category_codename) REFERENCES category(codename)
@@ -22,23 +22,12 @@ create table expense(
 INSERT INTO category (codename, name, is_base_expense, aliases)
 VALUES
     ("products", "продукты", true, "еда"),
-
-    ("coffee", "кофе", true, "кофе"),
-
-    ("dinner", "обед", true, "столовая, ланч, бизнес-ланч, бизнес ланч"),
-
-    ("cafe", "кафе", true, "ресторан, рест, мак, макдональдс, макдак, kfc, ilpatio, il patio"),
-
-    ("transport", "общ. транспорт", false, "метро, автобус, metro"),
-
-    ("taxi", "такси", false, "яндекс такси, yandex taxi"),
-
-    ("phone", "телефон", false, "теле2, связь"),
-
-    ("books", "книги", false, "литература, литра, лит-ра"),
-
-    ("internet", "интернет", false, "инет, inet"),
-
-    ("subscriptions", "подписки", false, "подписка"),
-
+    ("walk", "гулять", true, "перекус", "гулять", "погулять", "пепси" "pepsi", "фастфуд",
+                             "fast food", "mcdonalds", "kfc", "burger king", "чипсы", "кино",
+                             "shawarma", "шаурма", "шавуха", "шаверма", "doner", "doner king"),
+    ("technics", "техника", true, "pc", "пк", "компьютер", "монитор", "cable", "провода",
+                                  "клавиатура", "keyboard", "мышь", "mouse", "headphones",
+                                  "наушники", "smartphone", "телефон", "консоль"),
+    ("games", "игры", true, "ps4", "ps5", "playstation", "ps game", "pc game", "new game"),
+    ("gift", "подарки", true, "8 марта", "др", "нг"),
     ("other", "прочее", true, "");
